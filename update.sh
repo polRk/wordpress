@@ -1,7 +1,5 @@
-#!/usr/bin/env bash
-set -Eeuo pipefail
+#!/bin/sh
 
-cd "$(dirname "$(readlink -f "$BASH_SOURCE")")"
-
-./versions.sh "$@"
-./apply-templates.sh "$@"
+rm -rf ./WordPress
+git clone --depth 1 https://github.com/WordPress/WordPress.git
+rm -rf ./WordPress/.git
